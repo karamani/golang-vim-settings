@@ -1,6 +1,14 @@
-set nocompatible              " be iMproved, required
-set number
-filetype off                  " required
+syntax on
+colorscheme codeschool
+
+set nocompatible " убираем совместимость со старым vi
+
+set number " показывать номера строк в редакторе
+set colorcolumn=120 " вертикальная линия после 120 символов
+set tabstop=4 " ширина табуляции
+set softtabstop=4 " ширина 'мягкого' таба
+
+filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -13,11 +21,7 @@ Plugin 'fatih/vim-go'
 
 call vundle#end()
 
-syntax on
-colorscheme codeschool
-
-" NERDTree settings
-autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree " Открывать дерево каталогов при запуске VIM
 map <F2> :NERDTreeToggle<CR>
 
 filetype plugin indent on
