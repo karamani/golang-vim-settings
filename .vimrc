@@ -35,7 +35,7 @@ let g:neocomplete#enable_at_startup = 1
 " CTRL-s - сохранить файл
 nmap <C-s> :w<cr>
 vmap <C-s> <esc>:w<cr>
-imap <C-s> <esc>:w<cr>
+imap <C-s> <esc>:w<cr>a
 
 " CTRL-F4 - закрыть окно
 noremap <C-F4> <C-w>c
