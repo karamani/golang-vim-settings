@@ -32,10 +32,18 @@ map <F12> :NERDTreeToggle<CR>
 " neocomplete settings
 let g:neocomplete#enable_at_startup = 1
 
+" vim-go settings
+let g:go_fmt_command = "goimports"
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
 " CTRL-s - сохранить файл
-nmap <C-s> :w<cr>
-vmap <C-s> <esc>:w<cr>
-imap <C-s> <esc>:w<cr>a
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
 
 " CTRL-F4 - закрыть окно
 noremap <C-F4> <C-w>c
@@ -43,12 +51,15 @@ inoremap <C-F4> <C-o><C-w>c
 cnoremap <C-F4> <C-c><C-w>
 onoremap <C-F4> <C-c><C-w>c
 
-" CTRL-x - вырезать
-vnoremap <C-x> "+x 
-" CTRL-c - копировать
-vnoremap <C-c> "+y
-" CTRL-V вставить под курсором
-map <C-v>      "+gP
+" SHIFT-Del are Cut
+vnoremap <S-Del> "+x
+
+" CTRL-Insert are Copy
+vnoremap <C-Insert> "+y
+
+" SHIFT-Insert are Paste
+map <S-Insert>  "+gP
+cmap <S-Insert> <C-R>+
 
 " CTRL-z - отмена действия
 noremap <C-z> u
@@ -59,5 +70,8 @@ inoremap <C-y> <C-O><C-R>
 
 " CTRL-d - дублирование текущей строки
 imap <C-d> <esc>yypi
+
+map <F7> :tabprevious<C-M>
+map <F8> :tabnext<C-M>
 
 filetype plugin indent on
