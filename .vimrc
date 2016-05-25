@@ -70,6 +70,9 @@ inoremap <C-y> <C-O><C-R>
 
 " CTRL-d - дублирование текущей строки
 imap <C-d> <esc>yypi
+nmap <C-d> yyp
+
+nmap <C-o> o<esc>
 
 map <F7> :tabprevious<C-M>
 map <F8> :tabnext<C-M>
